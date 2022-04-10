@@ -1,4 +1,4 @@
-# The KheperaIV is seen as generic Linux distribution
+# The Attabot is seen as generic Linux distribution
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
@@ -42,7 +42,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 
 # ARGoS settings
-set(ARGOS_BUILD_FOR "khiv" CACHE STRING "What is ARGoS being built for? \"simulator\" or a robot name (lowercase)")
+set(ARGOS_BUILD_FOR "attabot" CACHE STRING "What is ARGoS being built for? \"simulator\" or a robot name (lowercase)")
 set(ARGOS_BUILD_NATIVE OFF CACHE BOOL "ON -> compile with platform-specific optimizations, OFF -> compile to portable binary")
 set(ARGOS_DYNAMIC_LIBRARY_LOADING OFF CACHE BOOL "ON -> compile support for dynamic library loading, OFF -> no support for dynamic library loading")
 set(ARGOS_DOCUMENTATION OFF CACHE BOOL "ON -> compile documentation, OFF -> dont'compile documentation")
