@@ -34,18 +34,7 @@ endif(ARGOS_BUILD_FOR_SIMULATOR)
 if(ARGOS_BUILD_FOR STREQUAL "attabot")
   set(ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_REALROBOT
     real_robot/real_attabot.h
-    real_robot/real_attabot_device.h
-    real_robot/real_attabot_differential_steering_device.h
-    real_robot/real_attabot_differential_steering_actuator.h
-    #real_robot/real_attabot_gripper_actuator.h
-    real_robot/real_attabot_leds_actuator.h
-    real_robot/real_attabot_battery_sensor.h
-    real_robot/real_attabot_camera_sensor.h
-    real_robot/real_attabot_encoder_sensor.h
-    real_robot/real_attabot_ground_sensor.h
-    real_robot/real_attabot_lidar_sensor.h
-    real_robot/real_attabot_proximity_sensor.h
-    real_robot/real_attabot_ultrasound_sensor.h)
+    real_robot/real_attabot_device.h)
 endif(ARGOS_BUILD_FOR STREQUAL "attabot")
 
 #
@@ -96,18 +85,7 @@ if(ARGOS_BUILD_FOR STREQUAL "attabot")
     ${ARGOS3_SOURCES_PLUGINS_ROBOTS_ATTABOT}
     ${ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_REALROBOT}
     real_robot/real_attabot.cpp
-    real_robot/real_attabot_device.cpp
-    real_robot/real_attabot_differential_steering_device.cpp
-    real_robot/real_attabot_differential_steering_actuator.cpp
-    #real_robot/real_attabot_gripper_actuator.cpp
-    real_robot/real_attabot_leds_actuator.cpp
-    real_robot/real_attabot_battery_sensor.cpp
-    real_robot/real_attabot_camera_sensor.cpp
-    real_robot/real_attabot_encoder_sensor.cpp
-    real_robot/real_attabot_ground_sensor.cpp
-    real_robot/real_attabot_lidar_sensor.cpp
-    real_robot/real_attabot_proximity_sensor.cpp
-    real_robot/real_attabot_ultrasound_sensor.cpp)
+    real_robot/real_attabot_device.cpp)
 endif(ARGOS_BUILD_FOR STREQUAL "attabot")
 
 #
