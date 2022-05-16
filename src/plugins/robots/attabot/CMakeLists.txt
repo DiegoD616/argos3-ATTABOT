@@ -30,13 +30,6 @@ if(ARGOS_BUILD_FOR_SIMULATOR)
     simulator/attabot_ultrasound_default_sensor.h)
 endif(ARGOS_BUILD_FOR_SIMULATOR)
 
-# argos3/plugins/robots/attabot/real_robot
-if(ARGOS_BUILD_FOR STREQUAL "attabot")
-  set(ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_REALROBOT
-    real_robot/real_attabot.h
-    real_robot/real_attabot_device.h)
-endif(ARGOS_BUILD_FOR STREQUAL "attabot")
-
 #
 # attabot sources
 #
@@ -80,14 +73,6 @@ if(ARGOS_BUILD_FOR_SIMULATOR)
   endif(ARGOS_QTOPENGL_FOUND)
 endif(ARGOS_BUILD_FOR_SIMULATOR)
 
-if(ARGOS_BUILD_FOR STREQUAL "attabot")
-  set(ARGOS3_SOURCES_PLUGINS_ROBOTS_ATTABOT
-    ${ARGOS3_SOURCES_PLUGINS_ROBOTS_ATTABOT}
-    ${ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_REALROBOT}
-    real_robot/real_attabot.cpp
-    real_robot/real_attabot_device.cpp)
-endif(ARGOS_BUILD_FOR STREQUAL "attabot")
-
 #
 # Create attabot plugin
 #
@@ -109,14 +94,6 @@ if(BUZZ_FOUND)
 endif(BUZZ_FOUND)
 
 #
-# Create battery monitor
-#
-if(ARGOS_BUILD_FOR STREQUAL "attabot")
-  add_executable(battery real_robot/battery.c)
-  target_link_libraries(battery -lattabot)
-endif(ARGOS_BUILD_FOR STREQUAL "attabot")
-
-#
 # Installation
 #
 install(FILES ${ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_CONTROLINTERFACE} DESTINATION include/argos3/plugins/robots/attabot/control_interface)
@@ -124,9 +101,6 @@ install(FILES ${ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_CONTROLINTERFACE} DESTINAT
 if(ARGOS_BUILD_FOR_SIMULATOR)
   install(FILES ${ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_SIMULATOR} DESTINATION include/argos3/plugins/robots/attabot/simulator)
   install(FILES simulator/attabot_texture_bottom.png simulator/attabot_texture_side.png simulator/attabot_texture_top.png DESTINATION include/argos3/plugins/simulator/visualizations/qt-opengl/textures)
-else(ARGOS_BUILD_FOR_SIMULATOR)
-  install(FILES ${ARGOS3_HEADERS_PLUGINS_ROBOTS_ATTABOT_REALROBOT} DESTINATION include/argos3/plugins/robots/attabot/real_robot)
-  install(FILES real_robot/main.cpp DESTINATION include/argos3/plugins/robots/attabot/real_robot)
 endif(ARGOS_BUILD_FOR_SIMULATOR)
 
 install(TARGETS argos3plugin_${ARGOS_BUILD_FOR}_attabot
